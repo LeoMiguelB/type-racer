@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <div class="timer" id="timer" disabled></div>
 
-        <div class="quote-display" id="quoteDisplay"></div>
-        <textarea onKeyDown="noBackspace();" class="quote-input" id="quoteInput" autofocus disabled></textarea>
-        <button id="btn" onClick="startGame()">PLAY</button>
+<body>
+    <div class="parallax">
+        <span class="span-circle" value="-20"></span>
+        <span class="span-circle" value="5"></span>
+        <span class="span-circle" value="30"></span>
+        <span class="span-circle" value="-10"></span>
+        <span class="span-circle" value="18"></span>
+        <span class="span-circle" value="-5"></span>
+        <span class="span-circle" value="4"></span>
+        <span class="span-circle" value="11"></span>
+        <span class="span-circle" value="-9"></span>
+        <span class="span-circle" value="2"></span>
+
+
+        <div class="container">
+            <div class="timer" id="timer" disabled></div>
+            <div class="quote-display" id="quoteDisplay"></div>
+            <textarea onKeyDown="noBackspace();" class="quote-input" id="quoteInput" autofocus disabled></textarea>
+            <button id="btn" onClick="startGame()">PLAY</button>
+        </div>
     </div>
     <script src="index.js" defer></script>
 </body>
+
 </html>

@@ -1,26 +1,140 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #FFAC1C;
-  }
-  
-  body, .quote-input {
-    font-family: monospace;
-  }
+  box-sizing: border-box;
+}
 
-  .timer {
-    text-align: center;
-    width: 900px;
-  }
-  
-  .container {
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ffac1c;
+  overflow: hidden;
+}
+
+body,
+.quote-input {
+  font-family: monospace;
+}
+
+.timer {
+  font-weight: 500;
+  text-align: center;
+  width: 900px;
+  position: absolute;
+  top: 2rem;
+  font-size: 3rem;
+  color: black;
+  font-weight: bold;
+}
+
+
+.parallax {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax .span-circle {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  border-radius: 100%;
+  box-shadow: 6px 10px #00000038; 
+
+}
+
+.parallax .span-circle:nth-child(1) {
+  top: 70%;
+  left: 40%;
+  background: #ffb042ba;
+  z-index: 1;
+}
+
+.parallax .span-circle:nth-child(2) {
+  top: 2%;
+  left: 60%;
+  background: #FFAF42;
+  z-index: 1;
+}
+
+
+.parallax .span-circle:nth-child(3) {
+  top: 1%;
+  left: 10%;
+  background: #ffb042ba;
+  z-index: 1;
+}
+
+
+.parallax .span-circle:nth-child(4) {
+  top: 50%;
+  left: 0%;
+  background: #FFAF42;
+  z-index: 1;
+}
+
+.parallax .span-circle:nth-child(5) {
+  top: 50%;
+  left: 80%;
+  background: #fedebe56;
+  z-index: 1;
+}
+
+.parallax .span-circle:nth-child(6) {
+  top: 20%;
+  left: 80%;
+  background: #ffb042ba;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+
+}
+
+.parallax .span-circle:nth-child(7) {
+  top: 80%;
+  left: 70%;
+  background: #ffb04255;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+}
+
+.parallax .span-circle:nth-child(8) {
+  top: 40%;
+  left: 10%;
+  background: #ffb04255;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+}
+
+.parallax .span-circle:nth-child(9) {
+  top: 3%;
+  left: 35%;
+  background: #ffb04255;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+}
+
+.parallax .span-circle:nth-child(10) {
+  top: 80%;
+  left: 30%;
+  background: #ffb04255;
+  z-index: 1;
+  height: 200px;
+  width: 200px;
+}
+
+
+.container {
+    position: relative;
     background-color: #F0DB4F;
     padding: 1rem;
     border-radius: .5rem;
@@ -28,64 +142,80 @@
     max-width: 90%;
     text-align: center;
     box-shadow: 6px 10px #00000038; 
+    z-index: 2;
+}
+
+
+
+button {
+  background-color: #ffac1c;
+  width: 100px;
+  height: 60px;
+  margin: 40px;
+  box-shadow: 6px 6px #00000038;
+}
+@keyframes button {
+  0% {
+    width: 70px;
   }
 
-  button {
-    background-color: #FFAC1C;
-    width: 100px;
-    height: 60px;
-    margin: 40px;
-    box-shadow:6px 6px #00000038; 
-
-  }
-  
-  button:hover {
-    background-color: rgba(255, 166, 0, 0.33);
-    cursor: pointer;
+  25% {
+    width: 75px;
   }
 
-  .timer {
-    position: absolute;
-    top: 2rem;
-    font-size: 3rem;
-    color: #F0DB4F;
-    font-weight: bold;
+  50% {
+    width: 50px;
   }
-  
-  .quote-display {
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    font-size: 40px;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
-    margin-left: calc(1rem + 2px);
-    margin-right: calc(1rem + 2px);
+
+  75% {
+    width: 75px;
   }
-  
-  .quote-input {
-    background-color: transparent;
-    border: 3px solid black;
-    outline: none;
-    width: 100%;
-    height: 20rem;
-    margin: auto;
-    resize: none;
-    padding: .5rem 1rem;
-    font-size: 2rem;
-    border-radius: .5rem;
+
+  100% {
+    width: 90px;
   }
-  
-  .quote-input:focus {
-    border-color: black;
-  }
-  
-  .correct {
-    color: green;
-  }
-  
-  .incorrect {
-    color: red;
-    text-decoration: underline;
-    background-color: rgba(255, 64, 0, 0.405);
-  }
+}
+
+button:hover {
+  background-color: rgba(255, 166, 0, 0.33);
+  cursor: pointer;
+  animation: button 0.4s linear infinite alternate-reverse;
+}
+
+.quote-display {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 40px;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  margin-left: calc(1rem + 2px);
+  margin-right: calc(1rem + 2px);
+}
+
+.quote-input {
+  background-color: transparent;
+  border: 3px solid black;
+  outline: none;
+  width: 100%;
+  height: 20rem;
+  margin: auto;
+  resize: none;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+}
+
+.quote-input:focus {
+  border-color: black;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+  text-decoration: underline;
+  background-color: rgba(255, 64, 0, 0.405);
+}
